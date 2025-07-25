@@ -1,11 +1,33 @@
 import React from "react";
 import MyButton from "./MyButton";
 import bitcoinSrc from "../assets/Bitcoin.svg";
-import type { NotificationItemProps } from "./NotificationItemList";
 
-function NotificationItem({ id, photo, price }: NotificationItemProps) {
+interface NotificationItemProps {
+  id: string;
+  photo: boolean;
+  price: string | undefined;
+  animateOut?: boolean;
+  animationType?: "slideRight" | "fadeOut";
+}
+
+function NotificationItem({
+  id,
+  photo,
+  price,
+  animateOut,
+  animationType,
+}: NotificationItemProps) {
+  const baseClasses =
+    "flex flex-col pb-2 transition-all duration-300 ease-in-out";
+  const animationClasses =
+    animateOut && animationType === "slideRight"
+      ? "opacity-0 translate-x-6 scale-95"
+      : animateOut && animationType === "fadeOut"
+        ? "opacity-0 scale-90"
+        : "opacity-100 translate-x-0 scale-100";
+
   return (
-    <div className="flex flex-col pb-2">
+    <div className={`${baseClasses} ${animationClasses}`}>
       {photo && <div className="bg-neutral-grey-100 h-24 w-full rounded-lg" />}
       <div className="flex flex-row gap-2 py-3">
         <span className="material-symbols-outlined text-neutral-grey-50 h-5 w-5">

@@ -1,7 +1,7 @@
 import React from "react";
-import type { NotificationTab } from "../App";
 import MyButton from "./MyButton";
 import { cn } from "../utils/cn";
+import type { NotificationTab } from "./ui/Modals/NotificationModal";
 
 interface TabsNotificationProps {
   type: NotificationTab;
