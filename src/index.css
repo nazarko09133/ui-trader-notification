@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Chakra Petch", sans-serif;
+
+  --color-neutral-800: #17171e;
+  --color-neutral-grey-50: #9f9fae;
+  --color-neutral-grey-100: #81818b;
+  --color-neutral-grey-500: #282834;
+  --color-neutral-grey-700: #14141a;
+  --color-neutral-white-100: #efeff3;
+  --color-accent-green-500: #00ec97;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent-green-500);
+  border-radius: 1px;
+  min-height: 24px;
+  margin-top: 2px;
+  margin-left: -1px;
+  opacity: 1;
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-green-500) transparent;
+}
